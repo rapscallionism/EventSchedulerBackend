@@ -4,9 +4,9 @@ namespace backend.Models;
 
 public class Event
 {
-    public int id;
-    public string title;
-    public int duration;
-    public User[] people;
-    public DateTime timeStart;
+    public int id { get; set; }
+    public string title { get; set;}
+    public int duration { get; set;}
+    public User[] people { get; set;}
+    public DateTime timeStart { get; set;}
 }

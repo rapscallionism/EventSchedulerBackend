@@ -49,14 +49,7 @@ namespace backend.Services
 
         public ObjectResult GetEvents()
         {
-            Event result = null;
-            Console.WriteLine(mockedEventData.TryGetValue(1, out result));
-            Console.WriteLine(result.id);
-            Console.WriteLine(result.duration);
-            Console.WriteLine(result.title);
-            Console.WriteLine(result.timeStart);
-            Console.WriteLine(result.people.Length);
-            return new ObjectResult(mockedEventData);
+            return new OkObjectResult(mockedEventData);
         }
 
         public ObjectResult CreateEvent(Event eventToCreate)
