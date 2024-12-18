@@ -1,5 +1,5 @@
 
-namespace Event_Scheduler.Models;
+namespace backend.Models;
 
 // TODO: figure out the representation of data to suit the bi-directionality of User to event
 public class User

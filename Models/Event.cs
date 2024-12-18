@@ -1,6 +1,6 @@
 
 
-namespace Event_Scheduler.Models;
+namespace backend.Models;
 
 public class Event
 {
