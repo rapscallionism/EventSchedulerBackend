@@ -18,7 +18,6 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseRouting();
-
 app.UseAuthorization();
 
 //app.MapStaticAssets();
@@ -31,6 +30,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "Events",
-    pattern: "{controller=Event}/{action=GetEvent}");
+    pattern: "/api/{controller=events}/{action=GetEvents}");
 
 app.Run();

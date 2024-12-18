@@ -4,8 +4,8 @@ namespace backend.Models;
 // TODO: figure out the representation of data to suit the bi-directionality of User to event
 public class User
 {
-    private int id;
-    private string firstName;
-    private string lastName;
-    private string nickName;
+    public int id;
+    public string firstName;
+    public string lastName;
+    public string nickName;
 }

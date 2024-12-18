@@ -5,9 +5,11 @@ namespace backend.Services
 {
     public interface IEventService
     {
-        public ContentResult GetEvent(int eventId);
-        public ContentResult UpdateEvent(int eventId, Event eventToUpdateTo);
-        public ContentResult RemoveEvent(int eventId);
-        public ContentResult CreateEvent(Event eventToCreate);
+        // TODO: REMOVE THIS ONCE DONE TESTING
+        public ObjectResult GetEvents();
+        public ObjectResult GetEvent(int eventId);
+        public ObjectResult UpdateEvent(int eventId, Event eventToUpdateTo);
+        public ObjectResult RemoveEvent(int eventId);
+        public ObjectResult CreateEvent(Event eventToCreate);
     }
 }
