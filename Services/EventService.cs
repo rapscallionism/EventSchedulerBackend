@@ -61,17 +61,16 @@ namespace backend.Services
         {
             Event? eventToFind;
             mockedEventData.TryGetValue(eventId, out eventToFind);
-            ObjectResult result = new ObjectResult(new Event());
 
             if (eventToFind == null)
             {
-                result.StatusCode = (int) HttpStatusCode.NotFound;
+                var result = new NotFoundObjectResult("Object with id of " + eventId + " not found.");
+                return result;
             } else
             {
-                result.StatusCode = (int)HttpStatusCode.OK;
+                var result = new OkObjectResult(eventToFind);
+                return result;
             }
-
-            return result;
         }
 
         public ObjectResult RemoveEvent(int eventId)

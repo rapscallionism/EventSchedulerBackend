@@ -24,7 +24,7 @@ public class EventsController : Controller
         return _eventService.GetEvents();
     }
 
-    [HttpGet("{eventId}")]
+    [HttpGet("{eventId:int}")]
     public ObjectResult GetEvent(int eventId) {
         return _eventService.GetEvent(eventId);
     }
