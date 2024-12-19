@@ -93,7 +93,18 @@ namespace backend.Services
 
         public ObjectResult RemoveEvent(int eventId)
         {
-            throw new NotImplementedException();
+            // Grab the event to remove
+            Event? eventToRemove = null;
+            mockedEventData.TryGetValue(eventId, out eventToRemove);
+
+            // If doesnt exist, return does not exist
+            if (eventToRemove == null) { return new NotFoundObjectResult("Event of id " + eventId + " was not found.");  }
+
+            // If it does, remove
+            mockedEventData.Remove(eventId);
+
+            // Return the associated event that was removed
+            return new OkObjectResult(eventToRemove);
         }
 
         public ObjectResult UpdateEvent(int eventId, Event eventToUpdateTo)

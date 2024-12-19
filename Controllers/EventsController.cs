@@ -40,6 +40,7 @@ public class EventsController : Controller
         return _eventService.UpdateEvent(eventId, eventToUpdateTo);
     }
 
+    [HttpDelete("{eventId:int}")]
     public ObjectResult RemoveEvent(int eventId)
     {
         return _eventService.RemoveEvent(eventId);
