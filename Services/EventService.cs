@@ -1,4 +1,5 @@
 ﻿using backend.Models;
+using backend.Utils;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using System.Net;
@@ -54,7 +55,24 @@ namespace backend.Services
 
         public ObjectResult CreateEvent(Event eventToCreate)
         {
-            throw new NotImplementedException();
+            // TODO: write validations on the event that it is a valid event to create in the first palce
+            bool isValidEvent = validateEvent(eventToCreate);
+
+            if (!isValidEvent)
+            {
+                return new BadRequestObjectResult("Event is not valid");
+            }
+
+            // TODO: database connection and committing; read valid entry and push to db
+            return new OkObjectResult(eventToCreate);
+        }
+
+        public bool validateEvent(Event eventToValidate)
+        {
+            UsefulUtils.assertCondition(eventToValidate != null);
+
+            // TODO: implement data validation
+            return true;
         }
 
         public ObjectResult GetEvent(int eventId)

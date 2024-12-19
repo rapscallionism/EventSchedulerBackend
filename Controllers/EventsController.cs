@@ -11,7 +11,7 @@ public class EventsController : Controller
     private readonly ILogger<EventsController> _logger;
     private readonly IEventService _eventService;
 
-    public EventsController(ILogger<EventsController> logger, 
+    public EventsController(ILogger<EventsController> logger,
         IEventService eventService)
     {
         _logger = logger;
@@ -29,7 +29,8 @@ public class EventsController : Controller
         return _eventService.GetEvent(eventId);
     }
 
-    public ObjectResult CreateEvent(Event eventToCreate) {
+    [HttpPost]
+    public ObjectResult CreateEvent([FromBody] Event eventToCreate) {
         return _eventService.CreateEvent(eventToCreate);
     }
 
