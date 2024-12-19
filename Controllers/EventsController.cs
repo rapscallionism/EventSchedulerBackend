@@ -34,7 +34,8 @@ public class EventsController : Controller
         return _eventService.CreateEvent(eventToCreate);
     }
 
-    public ObjectResult UpdateEvent(int eventId, Event eventToUpdateTo)
+    [HttpPut("{eventId:int}")]
+    public ObjectResult UpdateEvent(int eventId, [FromBody] Event eventToUpdateTo)
     {
         return _eventService.UpdateEvent(eventId, eventToUpdateTo);
     }

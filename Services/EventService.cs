@@ -98,7 +98,21 @@ namespace backend.Services
 
         public ObjectResult UpdateEvent(int eventId, Event eventToUpdateTo)
         {
-            throw new NotImplementedException();
+            // Grab the existing event
+            Event? existingEvent = null;
+            mockedEventData.TryGetValue(eventId, out existingEvent);
+
+            if (existingEvent == null)
+            {
+                return new NotFoundObjectResult("Event with id of " + eventId + " not found.");
+            }
+
+            // Update the details to the entire event
+            // TODO: would this be better implemented as a patch, find out the diff only if there's a diff?
+            mockedEventData[eventId] = eventToUpdateTo;
+
+            // Return the updated event
+            return new OkObjectResult(eventToUpdateTo);
         }
     }
 }
