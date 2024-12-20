@@ -1,0 +1,69 @@
+name: Build And Test
+on:
+    workflow_call:
+      inputs:
+        run-unit-tests:
+          type: boolean
+          description: Whether or not to run this type of test
+        run-integration-tests:
+          type: boolean
+          description: Whether or not to run this type of test
+        run-end-to-end-tests:
+          type: boolean
+          description: Whether or not to run this type of test 
+    workflow_dispatch:
+      inputs:
+        run-unit-tests:
+          type: boolean
+          description: Whether or not to run this type of test
+        run-integration-tests:
+          type: boolean
+          description: Whether or not to run this type of test
+        run-end-to-end-tests:
+          type: boolean
+          description: Whether or not to run this type of test 
+
+jobs:
+    build-and-test:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Check out the repository
+          uses: actions/checkout@v4
+
+        - name: Set up .NET sdk
+          uses: actions/setup-dotnet@v4
+
+        # TODO: do I need artifact from the build step to go onto the other steps?
+
+        - name: Grab the dependencies
+          run: dotnet restore
+
+        - name: Build the application
+          run: dotnet build --configuration Release
+
+        - name: Publish application files + dep. to publish folder
+          run: dotnet publish --configuration Release --output ./publish
+
+        # TODO: below command should run on port 5000; see if we can figure out to configure that manually before running it
+        # Sleeping to allow for the project to fully build and run
+        - name: Start the application (from the publish folder)
+          run: |
+            nohup dotnet ./publish/backend.dll &
+            sleep 10 
+
+        # TODO: make this dependent on the build
+        - name: Unit tests
+          if: ${{ inputs.run-unit-tests }}
+          run: echo "Running unit tests"
+
+        - name: Integration tests
+          if: ${{ inputs.run-integration-tests }}
+          run: echo "Running integration tests"
+
+        - name: End to End tests
+          if: ${{ inputs.run-end-to-end-tests }}
+          run: echo "Running end to end tests"
+
+        - name: Stop the application
+          run: pkill -f "dotnet ./publish/backend.dll"
