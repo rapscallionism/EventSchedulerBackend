@@ -1,0 +1,15 @@
+name: Build
+on:
+    workflow_call:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+        - name: Check out the repository
+          uses: actions/checkout@v4
+
+        # TODO: do I need artifact from the build step to go onto the other steps?
+        - name: Build the application from the repository
+          run: echo "Building application..."

@@ -1,0 +1,27 @@
+name: Deploy
+
+on:
+    workflow_dispatch:
+        inputs:
+            application-environment:
+                type: choice
+                description: What environment for the application to deploy to
+                options:
+                    - dev
+                    - stage
+                    - prod
+    workflow_call:
+        inputs:
+            application-environment:
+                type: string
+                description: What environment for the application to deploy to
+                required: true
+      
+jobs:
+  deploy:
+    # TODO: make this dependent on success of the test 
+    runs-on: ubuntu-latest
+    steps:
+      # TODO: make this dependent on the application-environment 
+      - name: Deploy to ${{ inputs.application-environment }}
+        run: echo "deploying to ${{ inputs.application-environment }}"

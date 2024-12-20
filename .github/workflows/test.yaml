@@ -1,0 +1,38 @@
+name: Test
+on:
+    workflow_call:
+        inputs:
+            unit-tests:
+                type: boolean
+                description: Whether or not to run this type of test
+            integration-tests:
+                type: boolean
+                description: Whether or not to run this type of test
+            end-to-end-tests:
+                type: boolean
+                description: Whether or not to run this type of test 
+    workflow_dispatch:
+        inputs:
+            unit-tests:
+                type: boolean
+                description: Whether or not to run this type of test
+            integration-tests:
+                type: boolean
+                description: Whether or not to run this type of test
+            end-to-end-tests:
+                type: boolean
+                description: Whether or not to run this type of test 
+
+jobs:
+    test:
+        # TODO: make this dependent on the build
+        runs-on: ubuntu-latest
+        steps:
+        - name: Unit tests
+          run: echo "Running unit tests"
+
+        - name: Integration tests
+          run: echo "Running integration tests"
+
+        - name: End to End tests
+          run: echo "Running end to end tests"

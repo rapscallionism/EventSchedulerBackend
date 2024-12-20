@@ -1,0 +1,33 @@
+name: Build, Test, Deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      application-environment:
+        type: choice
+        description: What environment for the application to deploy to
+        options:
+          - dev
+          - stage
+          - prod
+      unit-tests:
+        type: boolean
+        description: Whether or not to run this type of test
+      integration-tests:
+        type: boolean
+        description: Whether or not to run this type of test
+      end-to-end-tests:
+        type: boolean
+        description: Whether or not to run this type of test
+      # TODO: maybe have some sort of pre-built/cached application build to pull in the artifact and remove the build step altogether?
+
+jobs:
+    build:
+        uses: ./.github/build.yaml
+
+    test:
+        uses: ./.github/test.yaml
+
+    deplyo:
+        uses: ./.github/deploy.yaml
+
