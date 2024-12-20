@@ -20,11 +20,11 @@ on:
 
 jobs:
     build:
-        uses: ./.github/build.yaml@main
+        uses: ./.github/workflows/build.yaml@main
 
     test:
-        uses: ./.github/test.yaml@main
+        uses: ./.github/workflows/test.yaml@main
 
     deplyo:
-        uses: ./.github/deploy.yaml@main
+        uses: ./.github/workflows/deploy.yaml@main
 
