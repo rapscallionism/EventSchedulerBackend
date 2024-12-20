@@ -4,24 +4,18 @@ on:
       inputs:
         run-unit-tests:
           type: boolean
-          description: Whether or not to run this type of test
         run-integration-tests:
           type: boolean
-          description: Whether or not to run this type of test
         run-end-to-end-tests:
           type: boolean
-          description: Whether or not to run this type of test 
     workflow_dispatch:
       inputs:
         run-unit-tests:
           type: boolean
-          description: Whether or not to run this type of test
         run-integration-tests:
           type: boolean
-          description: Whether or not to run this type of test
         run-end-to-end-tests:
           type: boolean
-          description: Whether or not to run this type of test 
 
 jobs:
     build-and-test:
