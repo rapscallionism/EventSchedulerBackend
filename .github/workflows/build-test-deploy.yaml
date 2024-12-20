@@ -10,11 +10,11 @@ on:
           - dev
           - stage
           - prod
-      unit-tests:
+      run-unit-tests:
         type: boolean
-      integration-tests:
+      run-integration-tests:
         type: boolean
-      end-to-end-tests:
+      run-end-to-end-tests:
         type: boolean
       # TODO: maybe have some sort of pre-built/cached application build to pull in the artifact and remove the build step altogether?
 
