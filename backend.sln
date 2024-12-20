@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35605.110
+VisualStudioVersion = 17.13.35605.110 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "backend", "backend.csproj", "{5ADA2BB6-BD8A-FBBA-631C-E748BB1D8E69}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "backend", "Application\backend.csproj", "{5ADA2BB6-BD8A-FBBA-631C-E748BB1D8E69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event Scheduler Tests", "Tests\Event Scheduler Tests.csproj", "{C6AD8A6E-F1C3-FD9A-B851-2BABAE8449BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event Scheduler Tests", "Tests\Event Scheduler Tests.csproj", "{6F47D020-9262-C3C7-486D-20C5B4E73BFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,15 +17,15 @@ Global
 		{5ADA2BB6-BD8A-FBBA-631C-E748BB1D8E69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5ADA2BB6-BD8A-FBBA-631C-E748BB1D8E69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5ADA2BB6-BD8A-FBBA-631C-E748BB1D8E69}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C6AD8A6E-F1C3-FD9A-B851-2BABAE8449BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C6AD8A6E-F1C3-FD9A-B851-2BABAE8449BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C6AD8A6E-F1C3-FD9A-B851-2BABAE8449BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C6AD8A6E-F1C3-FD9A-B851-2BABAE8449BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F47D020-9262-C3C7-486D-20C5B4E73BFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F47D020-9262-C3C7-486D-20C5B4E73BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F47D020-9262-C3C7-486D-20C5B4E73BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F47D020-9262-C3C7-486D-20C5B4E73BFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {CEBB8B19-C693-42B5-A387-B2ECAC7B653E}
+		SolutionGuid = {1238ECD5-B0D8-47C2-84C3-50D3A2B93B18}
 	EndGlobalSection
 EndGlobal
