@@ -5,7 +5,7 @@ VisualStudioVersion = 17.13.35605.110
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "backend", "backend.csproj", "{5ADA2BB6-BD8A-FBBA-631C-E748BB1D8E69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event Scheduler Tests", "..\Event Scheduler Tests\Event Scheduler Tests.csproj", "{E1E87F0B-9AA3-4F81-9ED5-52ED784B6FC4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Event Scheduler Tests", "Tests\Event Scheduler Tests.csproj", "{C6AD8A6E-F1C3-FD9A-B851-2BABAE8449BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{5ADA2BB6-BD8A-FBBA-631C-E748BB1D8E69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5ADA2BB6-BD8A-FBBA-631C-E748BB1D8E69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5ADA2BB6-BD8A-FBBA-631C-E748BB1D8E69}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E1E87F0B-9AA3-4F81-9ED5-52ED784B6FC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E1E87F0B-9AA3-4F81-9ED5-52ED784B6FC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E1E87F0B-9AA3-4F81-9ED5-52ED784B6FC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E1E87F0B-9AA3-4F81-9ED5-52ED784B6FC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6AD8A6E-F1C3-FD9A-B851-2BABAE8449BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6AD8A6E-F1C3-FD9A-B851-2BABAE8449BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6AD8A6E-F1C3-FD9A-B851-2BABAE8449BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6AD8A6E-F1C3-FD9A-B851-2BABAE8449BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
