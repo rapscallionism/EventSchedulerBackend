@@ -10,6 +10,10 @@ jobs:
         - name: Check out the repository
           uses: actions/checkout@v4
 
+        - name: Set up .NET sdk
+          uses: actions/setup-dotnet@v4
+
         # TODO: do I need artifact from the build step to go onto the other steps?
-        - name: Build the application from the repository
-          run: echo "Building application..."
+
+        - name: Build the project
+          run: dotnet run build 
