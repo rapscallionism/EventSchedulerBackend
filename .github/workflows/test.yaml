@@ -2,24 +2,24 @@ name: Test
 on:
     workflow_call:
         inputs:
-            unit-tests:
+            run-unit-tests:
                 type: boolean
                 description: Whether or not to run this type of test
-            integration-tests:
+            run-integration-tests:
                 type: boolean
                 description: Whether or not to run this type of test
-            end-to-end-tests:
+            run-end-to-end-tests:
                 type: boolean
                 description: Whether or not to run this type of test 
     workflow_dispatch:
         inputs:
-            unit-tests:
+            run-unit-tests:
                 type: boolean
                 description: Whether or not to run this type of test
-            integration-tests:
+            run-integration-tests:
                 type: boolean
                 description: Whether or not to run this type of test
-            end-to-end-tests:
+            run-end-to-end-tests:
                 type: boolean
                 description: Whether or not to run this type of test 
 
@@ -29,10 +29,13 @@ jobs:
         runs-on: ubuntu-latest
         steps:
         - name: Unit tests
+          if: ${{ inputs.run-unit-tests }}
           run: echo "Running unit tests"
 
         - name: Integration tests
+          if: ${{ inputs.run-integration-tests }}
           run: echo "Running integration tests"
 
         - name: End to End tests
+          if: ${{ inputs.run-end-to-end-tests }}
           run: echo "Running end to end tests"
