@@ -23,6 +23,7 @@ jobs:
         uses: ./.github/workflows/build.yaml
 
     test:
+        needs: build
         uses: ./.github/workflows/test.yaml
         with:
           run-unit-tests: ${{ inputs.run-unit-tests }}
@@ -30,6 +31,7 @@ jobs:
           run-end-to-end-tests: ${{ inputs.run-end-to-end-tests }}
 
     deploy:
+        needs: test
         uses: ./.github/workflows/deploy.yaml
         with:
           application-environment: ${{ inputs.application-environment }}
